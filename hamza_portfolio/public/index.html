@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0070f3">
+    <meta name="description" content="Frontend Developer Portfolio - AsmrProg">
+    <link rel="stylesheet" href="build/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/logo_for_white_theme.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="../assets/logo_for_dark_theme.png" media="(prefers-color-scheme: dark)">
+    <title>Hamza Portfolio</title>
+</head>
+
+<body class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300">
+    <!-- Dark mode background gradients -->
+    <div class="fixed inset-0 -z-10 opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
+    </div>
+
+    <!-- Header -->
+    <header
+        class="fixed w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <span>
+                        <a href="#">
+                            <img src="../assets/logo_for_white_theme.png" alt="Logo" class="h-8 w-auto dark:hidden">
+                            <img src="../assets/logo_for_dark_theme.png" alt="Logo" class="h-8 w-auto hidden dark:block">
+                        </a>
+                    </span>
+                </div>
+                <ul class="hidden md:flex space-x-8">
+                    <li>
+                        <a href="#features"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                    </li>
+                    <li>
+                        <a href="#skills"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#projects"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="">
+                        <i class="fa-solid fa-moon text-gray-600 dark:text-gray-400"></i>
+                    </button>
+                    <button class="md:hidden p-2" id="menuToggle">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white dark:bg-dark-background z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="container mx-auto px-4 h-full flex flex-col">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <span>
+                        <a href="#">
+                            <img src="../assets/logo_for_white_theme.png" alt="Logo" class="h-8 w-auto dark:hidden">
+                            <img src="../assets/logo_for_dark_theme.png" alt="Logo" class="h-8 w-auto hidden dark:block">
+                        </a>
+                    </span>
+                </div>
+                <button id="closeMenu" class="p-2">
+                    <i class="fa-solid fa-square-xmark text-gray-600 dark:text-gray-400 text-2xl"></i>
+                </button>
+            </div>
+            <ul class="flex-1 flex flex-col justify-center items-center space-y-8">
+                <li>
+                    <a href="#features"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
+                </li>
+                <li>
+                    <a href="#About"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                </li>
+                <li>
+                    <a href="#skills"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+                </li>
+                <li>
+                    <a href="#projects"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    A <span
+                        class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Software Engineer and AI Enthusiast</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+                    I am<strong> a Software Engineering student and Full-Stack Developer </strong>passionate about building intelligent, scalable, and user-centered applications. <strong>My interests</strong> span modern web and mobile development, backend architecture, and the rapidly evolving field of AI.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#projects"
+                        class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">
+                        View Projects
+                    </a>
+                    <a href="#about"
+                        class="px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors">Learn
+                        More</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features"
+        class="py-24 bg-gray-50 dark:bg-dark-background-secondary  translate-y-4 transition-all duration-500 opacity-0">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What's in my Toolkit</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+                Tech stack and expertise that powers my projects.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature Card 1: Backend -->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-server text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Backend Engineering</h3>
+                    <p class="text-gray-600 dark:text-gray-400">FastAPI, Node.js/Express, async processing with Celery & Redis, event-driven architecture, clean code patterns,WebSocket integration and scalable API design.</p>
+                </div>
+                <!-- Feature Card 2: Mobile -->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-mobile-alt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Mobile Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Cross-platform apps with Flutter and native Android. Real-time state management, responsive UI design, and seamless user experiences.</p>
+                </div>
+                <!-- Feature Card 3: AI/ML -->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-brain text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">AI/ML & RAG</h3>
+                    <p class="text-gray-600 dark:text-gray-400">RAG pipelines , LLM orchestration, vector search and intelligent application design.</p>
+                </div>
+                <!-- Feature Card 4: Databases -->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-database text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Data & Databases</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Designing scalable schemas, query optimization and robust data pipelines.</p>
+                </div>
+                <!-- Feature Card 5: Architecture -->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-diagram-project text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Architecture & Patterns</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Clean architecture with solid principles, microservices design, event-driven systems, separation of concerns, and production-ready organization.</p>
+                </div>
+               
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                        I'm a  developer who enjoys transforming ideas into practical solutions by combining clean code, robust system design, and innovative technologies. From developing cross-platform mobile applications with Flutter to designing scalable backend services with Node.js, FastAPI, and Python, I focus on creating seamless digital experiences that deliver real value.
+                    </p>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                        Currently, I am expanding my expertise in Generative AI, AI-powered applications, and intelligent automation, exploring how large language models and modern AI technologies can enhance everyday products and solve real-world problems.
+                    </p>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+                       I am always eager to learn, collaborate, and contribute to projects that push the boundaries of technology and innovation.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact"
+                            class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10 text-center">
+                            Contact Me
+                        </a>
+                        <a href="#"
+                            class="px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors text-center">Download
+                            Resume</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div
+                        class="w-72 h-72 mx-auto animate-morph bg-gradient-to-br from-primary via-secondary to-accent rounded-full relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 rounded-full blur-2xl animate-morph">
+                        </div>
+                        <img src="../assets/profile-1.png" alt="Profile Photo"
+                            class="absolute inset-0 w-full h-full object-cover z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills"
+        class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Skills</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">Technologies and tools I use to bring
+                products to life</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1: Python -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-python text-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Python</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[95%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 2: JavaScript -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-js text-yellow-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">JavaScript</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[90%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 3: Java -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-java text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Java & Android</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[88%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 4: C -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-code text-cyan-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">C</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[82%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 5: HTML5 -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-html5 text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">HTML5</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[94%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 6: CSS -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-css3 text-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">CSS3</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[92%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 7: Dart -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-cyan-400/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-code text-cyan-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Dart</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[90%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 8: Flutter -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-mobile text-cyan-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Flutter</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[89%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 9: Node.js -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-node-js text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Node.js</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[87%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 10: Express -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-gray-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-server text-gray-600 dark:text-gray-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Express.js</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[86%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 11: MySQL -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-database text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">MySQL</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[85%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 12: Firebase -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-fire text-yellow-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Firebase</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[88%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 13: Supabase -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cloud text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Supabase</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[87%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 14: Redis & Celery -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bolt text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Redis & Celery</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[86%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 15: Docker -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-docker text-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Docker</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[84%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 16: Jenkins -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-gears text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Jenkins</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[82%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 17: Git -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-git-alt text-orange-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Git</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[91%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Skill Card 18: Figma -->
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-figma text-purple-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Figma</h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[80%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Featured Projects</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+                Check out some of my recent work
+            </p>
+
+            <!-- Main Grid (Initial 3 Projects) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1: MindPal Platform -->
+                <div class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="h-48 relative">
+                        <img src="../assets/mindpal.png" alt="MindPal Platform" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3">MindPal Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
+                            An AI-powered learning platform designed to help students master subjects by transforming any course material (PDFs, YouTube videos, images, and audio) into interactive learning experiences, complete with AI tutoring and auto-generated quizzes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6 mt-auto">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Clean Architecture</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Celery</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Redis</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">RAG pipelines</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Supabase</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">WebSockets</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">ChromaDB</span>
+                        </div>
+                        <div class="flex items-center gap-4 pt-2 border-t border-gray-100 dark:border-gray-800">
+                            <a href="https://www.linkedin.com/posts/hamza-khlaief-873aa9265_softwarearchitecture-fastapi-celery-activity-7507426257542766592-ZDca?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEfs5cBOT9ISyavcja9rpc6UubZLIcCWPQ"
+                                target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium">
+                                Linkedin Post
+                            </a>
+                            <a href="https://github.com/hamza-hk7440/MindPal"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Wassalni -->
+                <div class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="h-48 relative bg-gray-100 dark:bg-dark-background-secondary flex items-center justify-center">
+                        <img src="../assets/wassalni.png" alt="Wassalni Platform" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-black/5"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3">Wassalni</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            Wassalni is a cross-platform transport management solution designed to simplify how we travel and bridge the gap between users and providers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-3 mb-4">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Flutter</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Dart</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Express</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Supabase</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Payment Gateway</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">React</span>
+                        </div>
+                        <div class="flex items-center gap-4 pt-2 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                            <a href="https://www.linkedin.com/posts/hamza-khlaief-873aa9265_wassalni-publictransport-flutter-activity-7455896441975341056-_YFT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEfs5cBOT9ISyavcja9rpc6UubZLIcCWPQ" target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium">
+                                Linkedin Post
+                            </a>
+                            <a href="https://github.com/hamza-hk7440/Wassalni" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: MotoMatch App -->
+                <div class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="h-48 relative bg-gray-100 dark:bg-dark-background-secondary flex items-center justify-center">
+                        <img src="../assets/motomatch.png" alt="MotoMatch App" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-black/5"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3">MotoMatch App</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            An AI-powered car recommendation assistant.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-3 mb-4">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Flutter</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Dart</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">RAG</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">ChromaDB</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLM Orchestration</span>
+                        </div>
+                        <div class="flex items-center gap-4 pt-2 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                            <a href="https://www.linkedin.com/posts/hamza-khlaief-873aa9265_flutter-fastapi-ai-activity-7463946381750296577-4mrR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEfs5cBOT9ISyavcja9rpc6UubZLIcCWPQ"
+                                target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium">
+                                Linkedin Post
+                            </a>
+                            <a href="https://github.com/hamza-hk7440/MotoMatch"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hidden Extra Projects Container (Renders down when toggled) -->
+            <!-- Hidden Extra Projects Container (Renders down when toggled) -->
+            <div id="more-projects" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                
+                <!-- Additional Project Card: Privacy Shield -->
+                <div class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+                    
+                    <!-- Project Image / Banner -->
+                    <div class="h-48 relative bg-gray-100 dark:bg-dark-background-secondary flex items-center justify-center">
+                        <!-- Replace with your actual asset path -->
+                        <img src="../assets/privacyshield.png" alt="Privacy Shield" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-black/5"></div>
+                    </div>
+
+                    <!-- Project Content -->
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3">Privacy Shield</h3>
+                        
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            A secure, high-performance local REST API that automatically identifies and redacts Personally Identifiable Information (PII) from chat messages on the fly.
+                        </p>
+
+                        <!-- Tags / Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mt-3 mb-4">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">spaCy</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NLP</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">REST API</span>
+                        </div>
+
+                        <!-- Action Links -->
+                        <div class="flex items-center gap-4 pt-2 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                            <a href="https://www.linkedin.com/posts/hamza-khlaief-873aa9265_python-fastapi-spacy-activity-7468266595946164226-5akI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEfs5cBOT9ISyavcja9rpc6UubZLIcCWPQ" target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium">
+                                Linkedin Post
+                            </a>
+                            <a href="https://github.com/hamza-hk7440/Privacy-shield" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Project Card: SmartHome App -->
+                <div class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+                    
+                    <!-- Project Image / Banner -->
+                    <div class="h-48 relative bg-gray-100 dark:bg-dark-background-secondary flex items-center justify-center">
+                        <!-- Replace with your actual asset path -->
+                        <img src="../assets/smarthome.png" alt="SmartHome App" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-black/5"></div>
+                    </div>
+
+                    <!-- Project Content -->
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3">SmartHome App</h3>
+                        
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            This application simulates a connected home environment and allows users to monitor and control several systems.
+                        </p>
+
+                        <!-- Tags / Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mt-3 mb-4">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Java</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Android Studio</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">XML</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Firebase</span>
+                        </div>
+
+                        <!-- Action Links -->
+                        <div class="flex items-center gap-4 pt-2 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                            <a href="https://www.linkedin.com/posts/hamza-khlaief-873aa9265_androiddevelopment-mobileapp-smarthome-activity-7421270190266650624-2Tr1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEfs5cBOT9ISyavcja9rpc6UubZLIcCWPQ" target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium">
+                                Linkedin Post
+                            </a>
+                            <a href="https://github.com/hamza-hk7440/SmartHome" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- View All Projects Pill Button with Down Arrow -->
+            <div class="flex justify-center mt-12">
+                <button id="toggle-projects-btn" onclick="toggleMoreProjects()" 
+                    class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-900/10 dark:bg-gray-800/60 hover:bg-gray-900/20 dark:hover:bg-gray-800 text-gray-900 dark:text-white text-sm font-semibold tracking-wider transition-all duration-300 shadow-md">
+                    <span>VIEW ALL PROJECTS</span>
+                    <svg id="toggle-arrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Script to handle toggle visibility and arrow rotation -->
+    <script>
+        function toggleMoreProjects() {
+            const moreProjects = document.getElementById('more-projects');
+            const arrow = document.getElementById('toggle-arrow');
+            const btnText = document.getElementById('toggle-projects-btn').querySelector('span');
+
+            if (moreProjects.classList.contains('hidden')) {
+                moreProjects.classList.remove('hidden');
+                arrow.style.transform = 'rotate(180deg)';
+                btnText.textContent = 'SHOW LESS PROJECTS';
+            } else {
+                moreProjects.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+                btnText.textContent = 'VIEW ALL PROJECTS';
+            }
+        }
+    </script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get In Touch</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+                Interested in working together? Let's connect
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Contact Info -->
+                <div class="lg:col-span-1 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-6">
+                    <!-- Email -->
+                    <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-envelope text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Email</h3>
+                        <p class="text-gray-600 dark:text-gray-400">khlaiefhamza@gmail.com</p>
+                    </div>
+                    <!-- Location -->
+                    <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-map-location-dot text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Location</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Tunisia</p>
+                    </div>
+                    <!-- Social -->
+                    <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-globe text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Social</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/hamza-hk7440"
+                                class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/hamza-khlaief-873aa9265/"
+                                class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <!-- Contact Form -->
+                <div class="lg:col-span-2">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
+                        
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="415607fa-e6dc-4ca3-b6b6-e3f50ceea9eb">
+
+                        <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label for="name"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                                <input type="text" name="name" id="name" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none">
+                            </div>
+                            <div>
+                                <label for="email"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                <input type="email" name="email" id="email" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none">
+                            </div>
+                            <div>
+                                <label for="message"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                                <textarea name="message" id="message" rows="5" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">Send
+                                Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-dark-background-secondary py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <span>
+                        <a href="#">
+                            <img src="../assets/logo_for_white_theme.png" alt="Logo" class="h-8 w-auto dark:hidden">
+                            <img src="../assets/logo_for_dark_theme.png" alt="Logo" class="h-8 w-auto hidden dark:block">
+                        </a>
+                    </span>
+                
+                </div>
+                <ul class="flex flex-wrap justify-center gap-6 mb-0">
+                    <li>
+                        <a href="#features"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                    </li>
+                    <li>
+                        <a href="#skills"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#projects"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                    </li>
+                </ul>
+                <div class="flex gap-4">
+                    <a href="https://github.com/hamza-hk7440"
+                        class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hamza-khlaief-873aa9265/"
+                        class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
+                <p>&copy; 2026  All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
